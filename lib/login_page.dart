@@ -21,6 +21,7 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: InputDecoration(hintText: "Masukkan Email"),
               ),
               TextFormField(
+                obscureText: true,
                 decoration: InputDecoration(hintText: "Masukkan Password"),
               ),
               ElevatedButton(onPressed: () {}, child: Text("LOGIN")),
