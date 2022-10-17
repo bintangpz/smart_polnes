@@ -2,6 +2,8 @@ import 'package:smart_polnes/home.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:smart_polnes/login_page.dart';
+
 class SplashScreenPage extends StatefulWidget {
   @override
   _SplashScreenPageState createState() => _SplashScreenPageState();
@@ -19,7 +21,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     return Timer(duration, () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) {
-          return HomePage();
+          return LoginPage();
         }),
       );
     });
