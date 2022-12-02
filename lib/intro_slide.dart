@@ -1,137 +1,108 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:smart_polnes/intro_model.dart';
-import 'package:smart_polnes/intro_screen.dart';
-import 'package:smart_polnes/dot_indicator.dart';
-import 'package:smart_polnes/login_view.dart';
+import 'package:smart_polnes/color_intro.dart';
 
-class IntroSlide extends StatefulWidget {
-  const IntroSlide({Key? key}) : super(key: key);
-
+class IntroPage extends StatefulWidget {
   @override
-  State<IntroSlide> createState() => _IntroSlideState();
+  _IntroPageState createState() => _IntroPageState();
 }
 
-class _IntroSlideState extends State<IntroSlide> {
-  late PageController _pageController;
-
-  int _indexPage = 0;
-
-  @override
-  void initState() {
-    _pageController = PageController(initialPage: 0);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
+class _IntroPageState extends State<IntroPage> {
+  final List<Intro> introList = [
+    Intro(
+        image: "assets/images/logo_polnes.png",
+        title: "Welcome",
+        description: "Selamat Datang Di Aplikasi Smart TI"),
+    Intro(
+      image: "assets/images/logo_ti.png",
+      title: "Smart TI",
+      description:
+          "Aplikasi ini digunakan untuk memudahkan segala kebutuhan Civitas TI",
+    ),
+    Intro(
+      image: "assets/images/logo_enjoy.jpg",
+      title: "Enjoy",
+      description: "Selamat Menggunakan Aplikasi ini",
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      _pageController.previousPage(
-                          duration: Duration(milliseconds: 300),
-                          curve: Curves.ease);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      size: 24,
-                    ),
-                  ),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()));
-                      },
-                      child: const Text(
-                        "Skip",
-                        style: TextStyle(
-                            color: Colors.orange,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400),
-                      ))
-                ],
-              ),
-            ),
-            Expanded(
-              child: PageView.builder(
-                physics: const BouncingScrollPhysics(),
-                onPageChanged: (index) {
-                  setState(() {
-                    _indexPage = index;
-                  });
-                },
-                itemCount: intromodel_data.length,
-                controller: _pageController,
-                itemBuilder: (context, index) => IntroScreen(
-                    image: intromodel_data[index].image,
-                    title: intromodel_data[index].title,
-                    description: intromodel_data[index].description),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ...List.generate(
-                  intromodel_data.length,
-                  (index) => Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 15),
-                    child: DotIndicator(isActive: index == _indexPage),
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 40, left: 40),
-              child: InkWell(
-                onTap: () {
-                  _pageController.nextPage(
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.ease);
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color.fromARGB(255, 4, 137, 13),
-                  ),
-                  child: Center(
-                    child: Text(
-                      _indexPage == intromodel_data.length - 1
-                          ? "Finish"
-                          : "Next",
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 85,
-            ),
-          ],
+      body: Swiper.children(
+        index: 0,
+        autoplay: false,
+        loop: false,
+        pagination: SwiperPagination(
+          margin: EdgeInsets.only(bottom: 20),
+          builder: DotSwiperPaginationBuilder(
+            color: ColorIntroPalette.dotColor,
+            activeColor: ColorIntroPalette.dotActiveColor,
+            size: 10,
+            activeSize: 10,
+          ),
         ),
+        control: SwiperControl(iconNext: null, iconPrevious: null),
+        children: _buildPage(context),
       ),
     );
+  }
+
+  List<Widget> _buildPage(BuildContext context) {
+    List<Widget> widgets = [];
+    for (int i = 0; i < introList.length; i++) {
+      Intro intro = introList[i];
+      widgets.add(
+        Container(
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height / 6,
+          ),
+          child: ListView(
+            children: <Widget>[
+              Image.asset(
+                intro.image,
+                height: MediaQuery.of(context).size.height / 3.5,
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 12,
+                ),
+              ),
+              Center(
+                child: Text(
+                  intro.title,
+                  style: TextStyle(
+                    color: ColorIntroPalette.titleColor,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 20,
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.height / 20,
+                ),
+                child: Text(
+                  intro.description,
+                  style: TextStyle(
+                    color: ColorIntroPalette.descriptionColor,
+                    fontSize: 14,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+    return widgets;
   }
 }
