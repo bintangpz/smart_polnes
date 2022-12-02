@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:smart_polnes/intro_screen.dart';
+import 'package:smart_polnes/intro_slide.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'SMART TI POLNES',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Selamat Datang'),
-        ),
-        body: Center(
-          child: Text('hallo'),
-        ),
-      ),
-    );
-  }
+void main() {
+  runApp(MaterialApp(
+    title: ' SMART TI',
+    home: IntroSlide(),
+  ));
 }
