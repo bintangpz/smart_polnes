@@ -23,7 +23,7 @@ class IntroScreen extends StatelessWidget {
             children: [
               Image.asset(
                 image,
-                width: 270,
+                width: 100,
               ),
               const Spacer(),
               Text(

@@ -10,14 +10,15 @@ class IntroModel {
 final List<IntroModel> intromodel_data = [
   IntroModel(
       image: "images/logo_polnes.png",
-      title: "Relaxing Trip",
+      title: "Selamat Datang",
       description: "Selamat Datang di Aplikasi SMART TI POLNES"),
   IntroModel(
       image: "images/logo_polnes.png",
-      title: "Relaxing Trip",
-      description: "Selamat Datang di Aplikasi SMART TI POLNES"),
+      title: "Aplikasi Smart TI",
+      description:
+          "Aplikasi ini digunakan untuk memudahkan\nsegala kebutuhan terkait Jurusan TI"),
   IntroModel(
       image: "images/logo_polnes.png",
-      title: "Relaxing Trip",
-      description: "Selamat Datang di Aplikasi SMART TI POLNES"),
+      title: "Enjoy",
+      description: "Selamat Menikmati"),
 ];
