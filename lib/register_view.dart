@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/color_logreg.dart';
+import 'package:smart_polnes/login_view.dart';
 
 class RegisterPage extends StatelessWidget {
   static const routeName = "/registerPage";
@@ -30,7 +31,7 @@ class RegisterPage extends StatelessWidget {
 
   Widget _iconRegister() {
     return Image.asset(
-      "assets/images/logo_ti.png",
+      "images/logo_ti.png",
       width: 150,
       height: 150,
     );
@@ -181,7 +182,8 @@ class RegisterPage extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, "/");
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => LoginPage()));
         },
       ),
     ]);

@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
 
 Widget _iconLogin() {
   return Image.asset(
-    "assets/images/logo_ti.png",
+    "images/logo_ti.png",
     width: 150,
     height: 150,
   );
@@ -156,7 +156,8 @@ Widget _buildButton(BuildContext context) {
           style: TextStyle(color: Colors.white),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, RegisterPage.routeName);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => RegisterPage()));
         },
       ),
     ],

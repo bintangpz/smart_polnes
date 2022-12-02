@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_polnes/intro_model.dart';
 import 'package:smart_polnes/intro_screen.dart';
 import 'package:smart_polnes/dot_indicator.dart';
+import 'package:smart_polnes/login_view.dart';
 
 class IntroSlide extends StatefulWidget {
   const IntroSlide({Key? key}) : super(key: key);
@@ -51,7 +52,12 @@ class _IntroSlideState extends State<IntroSlide> {
                     ),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()));
+                      },
                       child: const Text(
                         "Skip",
                         style: TextStyle(
