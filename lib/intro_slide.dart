@@ -11,17 +11,17 @@ class IntroPage extends StatefulWidget {
 class _IntroPageState extends State<IntroPage> {
   final List<Intro> introList = [
     Intro(
-        image: "assets/images/logo_polnes.png",
+        image: "images/logo_polnes.png",
         title: "Welcome",
         description: "Selamat Datang Di Aplikasi Smart TI"),
     Intro(
-      image: "assets/images/logo_ti.png",
+      image: "images/logo_ti.png",
       title: "Smart TI",
       description:
           "Aplikasi ini digunakan untuk memudahkan segala kebutuhan Civitas TI",
     ),
     Intro(
-      image: "assets/images/logo_enjoy.jpg",
+      image: "images/logo_enjoy.jpg",
       title: "Enjoy",
       description: "Selamat Menggunakan Aplikasi ini",
     ),
@@ -44,7 +44,10 @@ class _IntroPageState extends State<IntroPage> {
             activeSize: 10,
           ),
         ),
-        control: SwiperControl(iconNext: null, iconPrevious: null),
+        control: SwiperControl(
+          iconNext: null,
+          iconPrevious: null,
+        ),
         children: _buildPage(context),
       ),
     );
