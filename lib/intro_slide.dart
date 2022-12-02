@@ -109,12 +109,12 @@ class _IntroSlideState extends State<IntroSlide> {
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: Colors.red,
+                    color: Color.fromARGB(255, 4, 137, 13),
                   ),
                   child: Center(
                     child: Text(
                       _indexPage == intromodel_data.length - 1
-                          ? "Get Started"
+                          ? "Finish"
                           : "Next",
                       style: const TextStyle(
                         color: Colors.white,
