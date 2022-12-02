@@ -3,5 +3,5 @@ class Intro {
   String title;
   String description;
 
-  Intro({this.image, this.title, this.description});
+  Intro({required this.image, required this.title, required this.description});
 }
