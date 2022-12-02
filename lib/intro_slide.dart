@@ -108,7 +108,7 @@ class _IntroSlideState extends State<IntroSlide> {
                   child: Center(
                     child: Text(
                       _indexPage == intromodel_data.length - 1
-                          ? "Get Startet"
+                          ? "Get Started"
                           : "Next",
                       style: const TextStyle(
                         color: Colors.white,

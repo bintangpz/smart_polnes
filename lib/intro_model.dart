@@ -13,7 +13,7 @@ final List<IntroModel> intromodel_data = [
       title: "Selamat Datang",
       description: "Selamat Datang di Aplikasi SMART TI POLNES"),
   IntroModel(
-      image: "images/logo_polnes.png",
+      image: "images/logo_ti.png",
       title: "Aplikasi Smart TI",
       description:
           "Aplikasi ini digunakan untuk memudahkan\nsegala kebutuhan terkait Jurusan TI"),
