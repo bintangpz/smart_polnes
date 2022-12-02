@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/flutter_swiper.dart';
 
 class IntroScreen extends StatelessWidget {
   final String image;
