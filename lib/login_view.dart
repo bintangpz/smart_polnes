@@ -1,165 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:smart_polnes/color_logreg.dart';
-import 'package:smart_polnes/register_view.dart';
+import 'package:flutter_login/flutter_login.dart';
+//import 'package:dashboard_screen.dart';
 
-class LoginPage extends StatelessWidget {
+const users = const {
+  'mc.bintang@gmail.com': '12345',
+  'hunter@gmail.com': 'hunter',
+};
+
+class LoginScreen extends StatelessWidget {
+  Duration get loginTime => Duration(milliseconds: 2250);
+
+  Future<String?> _authUser(LoginData data) {
+    debugPrint('Name: ${data.name}, Password: ${data.password}');
+    return Future.delayed(loginTime).then((_) {
+      if (!users.containsKey(data.name)) {
+        return 'User not exists';
+      }
+      if (users[data.name] != data.password) {
+        return 'Password does not match';
+      }
+      return null;
+    });
+  }
+
+  Future<String?> _signupUser(SignupData data) {
+    debugPrint('Signup Name: ${data.name}, Password: ${data.password}');
+    return Future.delayed(loginTime).then((_) {
+      return null;
+    });
+  }
+
+  Future<String> _recoverPassword(String name) {
+    debugPrint('Name: $name');
+    return Future.delayed(loginTime).then((_) {
+      if (!users.containsKey(name)) {
+        return 'User not exists';
+      }
+      return 'null';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: ColorPalette.primaryColor,
-        padding: EdgeInsets.all(20.0),
-        child: ListView(
-          children: <Widget>[
-            Center(
-              child: Column(
-                children: <Widget>[
-                  _iconLogin(),
-                  _titleDescription(),
-                  _textField(),
-                  _buildButton(context),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+    return FlutterLogin(
+      title: 'SMART TI',
+      logo: AssetImage('images/logo_ti.png'),
+      onLogin: _authUser,
+      onSignup: _signupUser,
+      onSubmitAnimationCompleted: () {
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) => LoginScreen(),
+        ));
+      },
+      onRecoverPassword: _recoverPassword,
     );
   }
-}
-
-Widget _iconLogin() {
-  return Image.asset(
-    "images/logo_ti.png",
-    width: 150,
-    height: 150,
-  );
-}
-
-Widget _titleDescription() {
-  return Column(
-    children: <Widget>[
-      Padding(
-        padding: EdgeInsets.only(top: 16.0),
-      ),
-      Text(
-        "Login Into App",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 16,
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(top: 12),
-      ),
-      Text(
-        "Selamat Datang Di Aplikasi Jurusan TI",
-        style: TextStyle(
-          fontSize: 12.0,
-          color: Colors.white,
-        ),
-        textAlign: TextAlign.center,
-      ),
-    ],
-  );
-}
-
-Widget _textField() {
-  return Column(
-    children: <Widget>[
-      Padding(
-        padding: EdgeInsets.only(top: 12),
-      ),
-      TextFormField(
-        decoration: const InputDecoration(
-          border: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: ColorPalette.underlineTextField,
-              width: 1.5,
-            ),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-              width: 3,
-            ),
-          ),
-          hintText: "Username",
-          hintStyle: TextStyle(color: ColorPalette.hintColor),
-        ),
-        style: TextStyle(color: Colors.white),
-        autofocus: false,
-      ),
-      Padding(
-        padding: EdgeInsets.only(top: 12),
-      ),
-      TextFormField(
-        decoration: const InputDecoration(
-          border: UnderlineInputBorder(),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: ColorPalette.underlineTextField,
-              width: 1.5,
-            ),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-              width: 3,
-            ),
-          ),
-          hintText: "Password",
-          hintStyle: TextStyle(color: ColorPalette.hintColor),
-        ),
-        style: TextStyle(color: Colors.white),
-        obscureText: true,
-        autofocus: false,
-      ),
-    ],
-  );
-}
-
-Widget _buildButton(BuildContext context) {
-  return Column(
-    children: <Widget>[
-      Padding(
-        padding: EdgeInsets.only(top: 16),
-      ),
-      InkWell(
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 8),
-          width: double.infinity,
-          child: Text(
-            'Login',
-            style: TextStyle(color: ColorPalette.primaryColor),
-            textAlign: TextAlign.center,
-          ),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(30),
-          ),
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(top: 16),
-      ),
-      Text(
-        'or',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 12,
-        ),
-      ),
-      TextButton(
-        child: Text(
-          'Register',
-          style: TextStyle(color: Colors.white),
-        ),
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => RegisterPage()));
-        },
-      ),
-    ],
-  );
 }

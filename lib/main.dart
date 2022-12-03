@@ -32,7 +32,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   void _onIntroEnd(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => LoginPage()),
+      MaterialPageRoute(builder: (_) => LoginScreen()),
     );
   }
 
@@ -108,7 +108,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               //introKey.currentState?.animateScroll(0);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
+                MaterialPageRoute(builder: (context) => LoginScreen()),
               );
             },
             child: const Text(
