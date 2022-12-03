@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:smart_polnes/dashboard.dart';
 //import 'package:dashboard_screen.dart';
 
 const users = const {
   'mc.bintang@gmail.com': '12345',
-  'hunter@gmail.com': 'hunter',
 };
 
 class LoginScreen extends StatelessWidget {
@@ -49,7 +49,7 @@ class LoginScreen extends StatelessWidget {
       onSignup: _signupUser,
       onSubmitAnimationCompleted: () {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => LoginScreen(),
+          builder: (context) => Panda(),
         ));
       },
       onRecoverPassword: _recoverPassword,
