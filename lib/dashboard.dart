@@ -2,6 +2,7 @@ import 'dart:math' as math show pi;
 
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 import 'package:flutter/material.dart';
+import 'package:smart_polnes/login_view.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -24,7 +25,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class SidebarPage extends StatefulWidget {
   @override
   _SidebarPageState createState() => _SidebarPageState();
@@ -51,54 +51,50 @@ class _SidebarPageState extends State<SidebarPage> {
         isSelected: true,
       ),
       CollapsibleItem(
-        text: 'Ice-Cream',
-        icon: Icons.icecream,
-        onPressed: () => setState(() => _headline = 'Errors'),
+        text: 'Info Terbaru',
+        icon: Icons.trending_up,
+        onPressed: () => setState(() => _headline = 'Info Terbaru'),
       ),
       CollapsibleItem(
-        text: 'Search',
-        icon: Icons.search,
-        onPressed: () => setState(() => _headline = 'Search'),
+        text: 'Jadwal Dosen',
+        icon: Icons.co_present,
+        onPressed: () => setState(() => _headline = 'Jadwal Dosen'),
       ),
       CollapsibleItem(
-        text: 'Notifications',
-        icon: Icons.notifications,
-        onPressed: () => setState(() => _headline = 'Notifications'),
+        text: 'Status Ruangan',
+        icon: Icons.door_front_door,
+        onPressed: () => setState(() => _headline = 'Status Ruangan'),
       ),
       CollapsibleItem(
-        text: 'Settings',
-        icon: Icons.settings,
-        onPressed: () => setState(() => _headline = 'Settings'),
+        text: 'KHS',
+        icon: Icons.credit_score,
+        onPressed: () => setState(() => _headline = 'KHS'),
       ),
       CollapsibleItem(
-        text: 'Home',
-        icon: Icons.home,
-        onPressed: () => setState(() => _headline = 'Home'),
+        text: 'Info Event',
+        icon: Icons.emoji_events,
+        onPressed: () => setState(() => _headline = 'Info Events'),
       ),
       CollapsibleItem(
-        text: 'Alarm',
-        icon: Icons.access_alarm,
-        onPressed: () => setState(() => _headline = 'Alarm'),
+        text: 'Kalender Akademik',
+        icon: Icons.calendar_month,
+        onPressed: () => setState(() => _headline = 'Kalender Akademik'),
       ),
       CollapsibleItem(
-        text: 'Eco',
-        icon: Icons.eco,
-        onPressed: () => setState(() => _headline = 'Eco'),
+        text: 'Jadwal Kuliah',
+        icon: Icons.today,
+        onPressed: () => setState(() => _headline = 'Jadwal Kuliah'),
       ),
       CollapsibleItem(
-        text: 'Event',
-        icon: Icons.event,
-        onPressed: () => setState(() => _headline = 'Event'),
+        text: 'Informasi',
+        icon: Icons.info,
+        onPressed: () => setState(() => _headline = 'info'),
       ),
       CollapsibleItem(
-        text: 'Email',
-        icon: Icons.email,
-        onPressed: () => setState(() => _headline = 'Email'),
-      ),
-      CollapsibleItem(
-        text: 'Face',
-        icon: Icons.face,
-        onPressed: () => setState(() => _headline = 'Face'),
+        text: 'logout',
+        icon: Icons.logout,
+        onPressed: () => Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder:(context) => LoginScreen())),
       ),
     ];
   }
@@ -113,8 +109,8 @@ class _SidebarPageState extends State<SidebarPage> {
         avatarImg: _avatarImg,
         title: 'Bagus Bintang',
         onTitleTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Comingsoon')));
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text('Comingsoon')));
         },
         body: _body(size, context),
         backgroundColor: Colors.black,
