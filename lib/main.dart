@@ -46,7 +46,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-  Widget _buildImage(String assetName, [double width = 350]) {
+  Widget _buildImage(String assetName, [double width = 150]) {
     return Image.asset('images/$assetName', width: width);
   }
 
@@ -67,7 +67,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       globalBackgroundColor: Colors.white,
       globalFooter: SizedBox(
         width: double.infinity,
-        height: 60,
+        height: 50,
         child: ElevatedButton(
           child: const Text(
             'Login',

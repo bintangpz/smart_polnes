@@ -9,7 +9,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Sidebar ui',
       home: Scaffold(
         body: SidebarPage(),
         floatingActionButton: FloatingActionButton(
@@ -69,11 +68,6 @@ class _SidebarPageState extends State<SidebarPage> {
         text: 'KHS',
         icon: Icons.credit_score,
         onPressed: () => setState(() => _headline = 'KHS'),
-      ),
-      CollapsibleItem(
-        text: 'Info Event',
-        icon: Icons.emoji_events,
-        onPressed: () => setState(() => _headline = 'Info Events'),
       ),
       CollapsibleItem(
         text: 'Kalender Akademik',
