@@ -65,21 +65,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     return IntroductionScreen(
       key: introKey,
       globalBackgroundColor: Colors.white,
-      globalHeader: Align(
-        alignment: Alignment.topRight,
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 16, right: 16),
-            child: _buildImage('logo_ti.png', 100),
-          ),
-        ),
-      ),
       globalFooter: SizedBox(
         width: double.infinity,
         height: 60,
         child: ElevatedButton(
           child: const Text(
-            'Let\'s go right away!',
+            'Login',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
           ),
           onPressed: () => _onIntroEnd(context),
@@ -103,25 +94,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           title: "Enjoy",
           body: "Selamat menggunakan Aplikasi ini",
           image: _buildImage('logo_enjoy.jpg'),
-          footer: ElevatedButton(
-            onPressed: () {
-              //introKey.currentState?.animateScroll(0);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),
-              );
-            },
-            child: const Text(
-              'Login',
-              style: TextStyle(color: Colors.white),
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.lightBlue,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-            ),
-          ),
           decoration: pageDecoration,
         ),
       ],

@@ -33,7 +33,7 @@ class SidebarPage extends StatefulWidget {
 class _SidebarPageState extends State<SidebarPage> {
   late List<CollapsibleItem> _items;
   late String _headline;
-  AssetImage _avatarImg = AssetImage('assets/man.png');
+  AssetImage _avatarImg = AssetImage('images/logo_ti.png');
 
   @override
   void initState() {
@@ -111,10 +111,10 @@ class _SidebarPageState extends State<SidebarPage> {
         isCollapsed: MediaQuery.of(context).size.width <= 800,
         items: _items,
         avatarImg: _avatarImg,
-        title: 'John Smith',
+        title: 'Bagus Bintang',
         onTitleTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Yay! Flutter Collapsible Sidebar!')));
+              SnackBar(content: Text('Comingsoon')));
         },
         body: _body(size, context),
         backgroundColor: Colors.black,
