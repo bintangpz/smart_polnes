@@ -49,7 +49,7 @@ class LoginScreen extends StatelessWidget {
       onSignup: _signupUser,
       onSubmitAnimationCompleted: () {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => MyApp(),
+          builder: (context) => Dashboard(),
         ));
       },
       onRecoverPassword: _recoverPassword,
