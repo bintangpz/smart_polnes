@@ -16,7 +16,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'SMART TI',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        primaryColor: Colors.blue),
       home: OnBoardingPage(),
     );
   }
