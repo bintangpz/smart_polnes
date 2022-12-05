@@ -17,6 +17,40 @@ class Body extends StatelessWidget {
             title: "Info Terbaru",
             press: () {},
           ),
+          Container(
+            width: size.width * 0.4,
+            child: Column(
+              children: <Widget>[
+                Image.asset("images/logo_enjoy.jpg"),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    top: kDefaultPadding/2,
+                    bottom: kDefaultPadding* 2.5,
+                  ),
+                  padding: EdgeInsets.all(kDefaultPadding/2),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [BoxShadow(
+                      offset: Offset(0, 10),
+                      blurRadius: 50,
+                      color: kPrimaryColor.withOpacity(0.21), 
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      RichText(
+                        text:TextSpan(
+                          children: [],
+                        ),
+                      ),
+                    ]
+                  )
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
