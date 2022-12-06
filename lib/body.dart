@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/header_with_searchbox.dart';
 import 'package:smart_polnes/constants.dart';
@@ -20,16 +22,15 @@ class Body extends StatelessWidget {
         ),
         MenuPertama(),
         MenuKedua(),
-
         Divider(
           color: Colors.blue,
           height: 10,
           thickness: 5,
           indent: 0,
           endIndent: 0,
-        ),
-        
-      ]),
+          ),
+        ]
+      ),
     );
   }
 }
