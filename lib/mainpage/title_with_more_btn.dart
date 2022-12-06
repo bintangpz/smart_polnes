@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_polnes/constants.dart';
+import 'package:smart_polnes/aset/constants.dart';
 
 class TitleWithMoreBtn extends StatelessWidget {
   const TitleWithMoreBtn({

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../aset/constants.dart';
 
-class MenuPertama extends StatelessWidget {
-  const MenuPertama({
+class MenuKedua extends StatelessWidget {
+  const MenuKedua({
     Key? key,
   }) : super(key: key);
 
@@ -21,8 +21,8 @@ class MenuPertama extends StatelessWidget {
               vertical: 10,
             ),
             child: DaftarMenu(
-              text: "Info Terbaru",
-              Icons: Icons.newspaper_outlined,
+              text: "Absensi Online",
+              Icons: Icons.present_to_all,
               press: () {},
             ),
           ),
@@ -30,24 +30,24 @@ class MenuPertama extends StatelessWidget {
             width: 10,
           ),
           DaftarMenu(
-            text: "Status Dosen",
-            Icons: Icons.people_outline,
+            text: "Daftar Kehadiran",
+            Icons: Icons.co_present,
             press: () {},
           ),
           SizedBox(
             width: 10,
           ),
           DaftarMenu(
-            text: "Status Ruangan",
-            Icons: Icons.door_front_door_outlined,
+            text: "Kalender Akademik",
+            Icons: Icons.calendar_month,
             press: () {},
           ),
           SizedBox(
             width: 10,
           ),
           DaftarMenu(
-            text: "KHS",
-            Icons: Icons.credit_score_outlined,
+            text: "Jadwal Kuliah",
+            Icons: Icons.today,
             press: () {},
           ),
         ],
