@@ -14,7 +14,7 @@ class PieChartSample3State extends State {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2,
+      aspectRatio: 1,
       child: Card(
         color: Colors.white,
         child: AspectRatio(

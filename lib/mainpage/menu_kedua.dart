@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../aset/constants.dart';
+import 'package:smart_polnes/content/kalender_akademik.dart';
+import 'package:smart_polnes/content/kalender_akademik.dart';
 
 class MenuKedua extends StatelessWidget {
   const MenuKedua({
@@ -40,7 +41,14 @@ class MenuKedua extends StatelessWidget {
           DaftarMenu(
             text: "Kalender Akademik",
             Icons: Icons.calendar_month,
-            press: () {},
+            press: () {
+              Navigator.push(
+              context,
+                MaterialPageRoute(
+                  builder: (context) => KalenderAkademik()
+                )
+              );
+            },
           ),
           SizedBox(
             width: 10,
@@ -79,7 +87,7 @@ class DaftarMenu extends StatelessWidget {
           color: Colors.white,
           child: InkWell(
             splashColor: Colors.blue,
-            onTap: () {},
+            onTap: press,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
