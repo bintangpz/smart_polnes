@@ -11,87 +11,92 @@ class MenuUtama extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: <Widget> [
-          MenuCard(
-              image: "images/logo_enjoy.jpg", 
-              title: "Informasi", 
+        children: <Widget>[
+          SizedBox(
+            width: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 0,
+              vertical: 10,
+            ),
+            child: DaftarMenu(
+              text: "Info Terbaru",
+              Icons: Icons.newspaper_outlined,
               press: () {},
-              ),
-          MenuCard(
-              image: "images/logo_enjoy.jpg", 
-              title: "Informasi", 
-              press: () {},
-              ),
-          MenuCard(
-              image: "images/logo_enjoy.jpg", 
-              title: "Informasi", 
-              press: () {},
-              ),
-          MenuCard(
-              image: "images/logo_enjoy.jpg", 
-              title: "Informasi", 
-              press: () {},
-              ),
-          MenuCard(
-              image: "images/logo_enjoy.jpg", 
-              title: "Informasi", 
-              press: () {},
-              ),
+            ),
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          DaftarMenu(
+            text: "Status Dosen",
+            Icons: Icons.people_outline,
+            press: () {},
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          DaftarMenu(
+            text: "Status Ruangan",
+            Icons: Icons.door_front_door_outlined,
+            press: () {},
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          DaftarMenu(
+            text: "KHS",
+            Icons: Icons.credit_score_outlined,
+            press: () {},
+          ),
         ],
       ),
     );
   }
 }
 
-class MenuCard extends StatelessWidget {
-  const MenuCard({
+class DaftarMenu extends StatelessWidget {
+  const DaftarMenu({
     Key? key,
-    required this.image,
-    required this.title,
+    required this.text,
+    required this.Icons,
     required this.press,
   }) : super(key: key);
 
-  final String image, title;
+  final String text;
+  final IconData Icons;
   final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      margin: EdgeInsets.only(
-        left: kDefaultPadding,
-        top: kDefaultPadding / 2,
-        bottom: kDefaultPadding * 2.5,
-      ),
-      width: size.width * 0.4,
-      child: Column(
-        children: <Widget>[
-          Image.asset("images/logo_enjoy.jpg"),
-          GestureDetector(
-            onTap: press,
-            child: Container(
-                padding: EdgeInsets.all(kDefaultPadding / 2),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(10, 10),
-                      blurRadius: 50,
-                      color: kPrimaryColor.withOpacity(0.23),
-                    ),
-                  ],
+    return SizedBox.fromSize(
+      size: Size(120, 120),
+      child: new ClipRRect(
+        borderRadius: new BorderRadius.circular(30),
+        child: Material(
+          color: Colors.white,
+          child: InkWell(
+            splashColor: Colors.blue,
+            onTap: () {},
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(
+                  Icons,
+                  size: 30,
                 ),
-                child: Row(
-                  children: <Widget>[
-                    Text('$title', style: Theme.of(context).textTheme.button)
-                  ],
-                )),
-          )
-        ],
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
