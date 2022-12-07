@@ -13,6 +13,16 @@ class PresensiKehadiran extends StatefulWidget {
       body: Body(),
     );
   }
+
+  AppBar buildAppBar() {
+    return AppBar(
+      elevation: 0,
+      leading: IconButton(
+        icon: Icon(Icons.menu),
+        onPressed: () {},
+      ),
+    );
+  }
 }
 
 class PieChart2State extends State {

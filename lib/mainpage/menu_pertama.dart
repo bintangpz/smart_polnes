@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../aset/constants.dart';
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 
 class MenuPertama extends StatelessWidget {
   const MenuPertama({
@@ -48,7 +48,21 @@ class MenuPertama extends StatelessWidget {
           DaftarMenu(
             text: "KHS",
             Icons: Icons.credit_score_outlined,
-            press: () {},
+            press: () {
+              final snackBar = SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'ComingSoon!',
+                  message: 'Ditunggu Update Selanjutnya!',
+                  contentType: ContentType.success,
+                ),
+              );
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
+            },
           ),
         ],
       ),
@@ -74,12 +88,12 @@ class DaftarMenu extends StatelessWidget {
     return SizedBox.fromSize(
       size: Size(130, 130),
       child: new ClipRRect(
-        borderRadius: new BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(30),
         child: Material(
           color: Colors.white,
           child: InkWell(
             splashColor: Colors.blue,
-            onTap: () {},
+            onTap: press,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

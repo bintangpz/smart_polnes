@@ -10,4 +10,14 @@ class KalenderAkademik extends StatelessWidget {
       body: Body(),
     );
   }
+
+  AppBar buildAppBar() {
+    return AppBar(
+      elevation: 0,
+      leading: IconButton(
+        icon: Icon(Icons.menu),
+        onPressed: () {},
+      ),
+    );
+  }
 }
