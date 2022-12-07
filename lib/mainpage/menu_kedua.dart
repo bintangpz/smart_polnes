@@ -25,7 +25,21 @@ class MenuKedua extends StatelessWidget {
             child: DaftarMenu(
               text: "Absensi Online",
               Icons: Icons.present_to_all,
-              press: () {},
+              press: () {
+                final snackBar = SnackBar(
+                  elevation: 0,
+                  behavior: SnackBarBehavior.floating,
+                  backgroundColor: Colors.transparent,
+                  content: AwesomeSnackbarContent(
+                    title: 'ComingSoon!',
+                    message: 'Ditunggu Update Selanjutnya!',
+                    contentType: ContentType.success,
+                  ),
+                );
+                ScaffoldMessenger.of(context)
+                  ..hideCurrentSnackBar()
+                  ..showSnackBar(snackBar);
+              },
             ),
           ),
           SizedBox(

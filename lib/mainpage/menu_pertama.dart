@@ -23,7 +23,21 @@ class MenuPertama extends StatelessWidget {
             child: DaftarMenu(
               text: "Info Terbaru",
               Icons: Icons.newspaper_outlined,
-              press: () {},
+              press: () {
+              final snackBar = SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'ComingSoon!',
+                  message: 'Ditunggu Update Selanjutnya!',
+                  contentType: ContentType.success,
+                ),
+              );
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
+            },
             ),
           ),
           SizedBox(
@@ -32,7 +46,21 @@ class MenuPertama extends StatelessWidget {
           DaftarMenu(
             text: "Status Dosen",
             Icons: Icons.people_outline,
-            press: () {},
+            press: () {
+              final snackBar = SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'ComingSoon!',
+                  message: 'Ditunggu Update Selanjutnya!',
+                  contentType: ContentType.success,
+                ),
+              );
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
+            },
           ),
           SizedBox(
             width: 10,
@@ -40,7 +68,21 @@ class MenuPertama extends StatelessWidget {
           DaftarMenu(
             text: "Status Ruangan",
             Icons: Icons.door_front_door_outlined,
-            press: () {},
+            press: () {
+              final snackBar = SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'ComingSoon!',
+                  message: 'Ditunggu Update Selanjutnya!',
+                  contentType: ContentType.success,
+                ),
+              );
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
+            },
           ),
           SizedBox(
             width: 10,
