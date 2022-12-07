@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/aset/constants.dart';
 
-class KalenderAkademik extends StatelessWidget {
-  const KalenderAkademik({super.key});
+class Body extends StatelessWidget {
+  const Body({super.key});
 
   @override
   Widget build(BuildContext context) {
