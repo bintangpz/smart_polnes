@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/content/Kalender_akademik/kalender_akademik.dart';
-import 'package:smart_polnes/content/absensi_online/presensi_kehadiran.dart';
+import 'package:smart_polnes/content/Presensi_kehadiran/presensi_kehadiran.dart';
 
 class MenuKedua extends StatelessWidget {
   const MenuKedua({

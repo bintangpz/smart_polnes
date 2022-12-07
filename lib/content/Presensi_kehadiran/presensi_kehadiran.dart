@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:smart_polnes/aset/indicator.dart';
+import 'package:smart_polnes/content/Presensi_kehadiran/body.dart';
 
 class PresensiKehadiran extends StatefulWidget {
   const PresensiKehadiran({super.key});
 
   @override
   State<StatefulWidget> createState() => PieChart2State();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Body(),
+    );
+  }
 }
 
 class PieChart2State extends State {
