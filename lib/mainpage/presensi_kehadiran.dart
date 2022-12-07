@@ -1,48 +1,99 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:smart_polnes/aset/indicator.dart';
 
 class PresensiKehadiran extends StatefulWidget {
   const PresensiKehadiran({super.key});
 
   @override
-  State<StatefulWidget> createState() => PieChartSample3State();
+  State<StatefulWidget> createState() => PieChart2State();
 }
 
-class PieChartSample3State extends State {
-  int touchedIndex = 0;
+class PieChart2State extends State {
+  int touchedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1,
+      aspectRatio: 1.3,
       child: Card(
         color: Colors.white,
-        child: AspectRatio(
-          aspectRatio: 1,
-          child: PieChart(
-            PieChartData(
-              pieTouchData: PieTouchData(
-                touchCallback: (FlTouchEvent event, pieTouchResponse) {
-                  setState(() {
-                    if (!event.isInterestedForInteractions ||
-                        pieTouchResponse == null ||
-                        pieTouchResponse.touchedSection == null) {
-                      touchedIndex = -1;
-                      return;
-                    }
-                    touchedIndex =
-                        pieTouchResponse.touchedSection!.touchedSectionIndex;
-                  });
-                },
-              ),
-              borderData: FlBorderData(
-                show: false,
-              ),
-              sectionsSpace: 0,
-              centerSpaceRadius: 0,
-              sections: showingSections(),
+        child: Row(
+          children: <Widget>[
+            const SizedBox(
+              height: 18,
             ),
-          ),
+            Expanded(
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: PieChart(
+                  PieChartData(
+                    pieTouchData: PieTouchData(
+                      touchCallback: (FlTouchEvent event, pieTouchResponse) {
+                        setState(() {
+                          if (!event.isInterestedForInteractions ||
+                              pieTouchResponse == null ||
+                              pieTouchResponse.touchedSection == null) {
+                            touchedIndex = -1;
+                            return;
+                          }
+                          touchedIndex = pieTouchResponse
+                              .touchedSection!.touchedSectionIndex;
+                        });
+                      },
+                    ),
+                    borderData: FlBorderData(
+                      show: false,
+                    ),
+                    sectionsSpace: 0,
+                    centerSpaceRadius: 40,
+                    sections: showingSections(),
+                  ),
+                ),
+              ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const <Widget>[
+                Indicator(
+                  color: Colors.green,
+                  text: 'Hadir',
+                  isSquare: true,
+                ),
+                SizedBox(
+                  height: 4,
+                ),
+                Indicator(
+                  color: Colors.red,
+                  text: 'Tidak hadir',
+                  isSquare: true,
+                ),
+                SizedBox(
+                  height: 4,
+                ),
+                Indicator(
+                  color: Color(0xff845bef),
+                  text: 'Izin',
+                  isSquare: true,
+                ),
+                SizedBox(
+                  height: 4,
+                ),
+                Indicator(
+                  color: Colors.yellow,
+                  text: 'Sakit',
+                  isSquare: true,
+                ),
+                SizedBox(
+                  height: 18,
+                ),
+              ],
+            ),
+            const SizedBox(
+              width: 28,
+            ),
+          ],
         ),
       ),
     );
@@ -51,38 +102,42 @@ class PieChartSample3State extends State {
   List<PieChartSectionData> showingSections() {
     return List.generate(4, (i) {
       final isTouched = i == touchedIndex;
-      final fontSize = isTouched ? 20.0 : 16.0;
-      final radius = isTouched ? 110.0 : 100.0;
-      final widgetSize = isTouched ? 55.0 : 40.0;
-
+      final fontSize = isTouched ? 25.0 : 16.0;
+      final radius = isTouched ? 60.0 : 50.0;
       switch (i) {
         case 0:
           return PieChartSectionData(
             color: Colors.green,
             value: 40,
-            title: 'Hadir',
+            title: '40%',
             radius: radius,
             titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
               color: const Color(0xffffffff),
             ),
           );
         case 1:
           return PieChartSectionData(
             color: Colors.red,
-            value: 10,
-            title: 'Alpa',
+            value: 30,
+            title: '30%',
             radius: radius,
             titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
               color: const Color(0xffffffff),
             ),
           );
         case 2:
           return PieChartSectionData(
-            color: Colors.purple,
-            value: 16,
-            title: 'Izin',
+            color: const Color(0xff845bef),
+            value: 15,
+            title: '15%',
             radius: radius,
             titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
               color: const Color(0xffffffff),
             ),
           );
@@ -90,53 +145,17 @@ class PieChartSample3State extends State {
           return PieChartSectionData(
             color: Colors.yellow,
             value: 15,
-            title: 'Sakit',
+            title: '15%',
             radius: radius,
             titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
               color: const Color(0xffffffff),
             ),
           );
         default:
-          throw Exception('Oh no');
+          throw Error();
       }
     });
-  }
-}
-
-class _Badge extends StatelessWidget {
-  const _Badge(
-    this.svgAsset, {
-    required this.size,
-    required this.borderColor,
-  });
-  final String svgAsset;
-  final double size;
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: PieChart.defaultDuration,
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: borderColor,
-          width: 2,
-        ),
-        boxShadow: <BoxShadow>[
-          BoxShadow(
-            color: Colors.black.withOpacity(.5),
-            offset: const Offset(3, 3),
-            blurRadius: 3,
-          ),
-        ],
-      ),
-      padding: EdgeInsets.all(size * .15),
-      child: Center(
-        ),
-      );
   }
 }
