@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/content/Kalender_akademik/kalender_akademik.dart';
-import 'package:smart_polnes/content/Kalender_akademik/body.dart';
+import 'package:smart_polnes/content/absensi_online/presensi_kehadiran.dart';
 
 class MenuKedua extends StatelessWidget {
   const MenuKedua({
@@ -33,7 +33,14 @@ class MenuKedua extends StatelessWidget {
           DaftarMenu(
             text: "Daftar Kehadiran",
             Icons: Icons.co_present,
-            press: () {},
+            press: () {
+              Navigator.push(
+              context,
+                MaterialPageRoute(
+                  builder: (context) => PresensiKehadiran()
+                )
+              );
+            },
           ),
           SizedBox(
             width: 10,
