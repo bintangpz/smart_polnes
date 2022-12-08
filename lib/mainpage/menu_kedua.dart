@@ -1,7 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
-import 'package:smart_polnes/content/Kalender_akademik/kalender_akademik.dart';
-import 'package:smart_polnes/content/Presensi_kehadiran/presensi_kehadiran.dart';
+import 'package:smart_polnes/content/data_mahasiswa/dashboard.dart';
+import 'package:smart_polnes/content/kalender_akademik/kalender_akademik.dart';
 
 class MenuKedua extends StatelessWidget {
   const MenuKedua({
@@ -46,11 +46,11 @@ class MenuKedua extends StatelessWidget {
             width: 10,
           ),
           DaftarMenu(
-            text: "Daftar Kehadiran",
-            Icons: Icons.co_present,
+            text: "Chart Mahasiswa",
+            Icons: Icons.credit_score,
             press: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PresensiKehadiran()));
+                  MaterialPageRoute(builder: (context) => ChartMahasiswa()));
             },
           ),
           SizedBox(
