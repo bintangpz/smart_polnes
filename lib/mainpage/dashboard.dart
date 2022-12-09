@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 import 'package:smart_polnes/mainpage/body.dart';
-import 'package:smart_polnes/mainpage/sidemenu.dart';
+import 'package:smart_polnes/sidemenu_mainpage.dart';
 
 final GlobalKey<SideMenuState> _sideMenuKey = GlobalKey<SideMenuState>();
 
@@ -10,7 +10,7 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SideMenu(
       key: _sideMenuKey,
-      menu: SideMenuBar(),
+      menu: SideMenuMainPage(),
       type: SideMenuType.slideNRotate,
       child: Scaffold(
         appBar: buildAppBar(),

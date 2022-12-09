@@ -18,23 +18,6 @@ class Body extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                     vertical: kDefaultPadding * 3,
                   ),
-                  child: Column(
-                    children: <Widget>[
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: IconButton(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: kDefaultPadding,
-                          ),
-                          icon: Icon(Icons.arrow_back),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                      ),
-                      Spacer(),
-                    ],
-                  ),
                 ),
               ),
               Container(
