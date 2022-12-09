@@ -2,26 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
 class SideMenuBar extends StatefulWidget {
-  const SideMenuBar({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const SideMenuBar({Key? key}) : super(key: key);
 
   @override
-  _SideMenuBar createState() => _SideMenuBar();
+  _SideMenuBarState createState() => _SideMenuBarState();
 }
 
-class _SideMenuBar extends State<SideMenuBar> {
-  int _counter = 0;
+class _SideMenuBarState extends State {
   bool isOpened = false;
 
   final GlobalKey<SideMenuState> _sideMenuKey = GlobalKey<SideMenuState>();
   final GlobalKey<SideMenuState> _endSideMenuKey = GlobalKey<SideMenuState>();
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   toggleMenu([bool end = false]) {
     if (end) {
@@ -44,59 +35,17 @@ class _SideMenuBar extends State<SideMenuBar> {
   @override
   Widget build(BuildContext context) {
     return SideMenu(
-      key: _endSideMenuKey,
-      inverse: true, // end side menu
-      background: Colors.green[700],
+      key: _sideMenuKey,
+      menu: buildMenu(),
       type: SideMenuType.slideNRotate,
-      menu: Padding(
-        padding: const EdgeInsets.only(left: 25.0),
-        child: buildMenu(),
-      ),
-      onChange: (_isOpened) {
-        setState(() => isOpened = _isOpened);
-      },
-      child: SideMenu(
-        key: _sideMenuKey,
-        menu: buildMenu(),
-        type: SideMenuType.slideNRotate,
-        onChange: (_isOpened) {
-          setState(() => isOpened = _isOpened);
-        },
-        child: IgnorePointer(
-          ignoring: isOpened,
-          child: Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              leading: IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: () => toggleMenu(),
-              ),
-              actions: [
-                IconButton(
-                  icon: const Icon(Icons.menu),
-                  onPressed: () => toggleMenu(true),
-                )
-              ],
-              title: Text(widget.title),
-            ),
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  const Text(
-                    'You have pushed the button this many times:',
-                  ),
-                  Text(
-                    '$_counter',
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-                ],
-              ),
-            ),
-            floatingActionButton: FloatingActionButton(
-              onPressed: _incrementCounter,
-              tooltip: 'Increment',
-              child: const Icon(Icons.add),
+      child: IgnorePointer(
+        ignoring: isOpened,
+        child: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            leading: IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () => toggleMenu(),
             ),
           ),
         ),
@@ -122,7 +71,7 @@ class _SideMenuBar extends State<SideMenuBar> {
                 ),
                 SizedBox(height: 16.0),
                 Text(
-                  "Hello, John Doe",
+                  "Hello, Bagus bintang",
                   style: TextStyle(color: Colors.white),
                 ),
                 SizedBox(height: 20.0),
