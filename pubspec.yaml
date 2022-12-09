@@ -41,6 +41,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   fl_chart: ^0.55.2
   awesome_snackbar_content: ^0.1.0
+  shrink_sidemenu: ^2.0.0+2-null-safety
+  liquid_ui: ^1.0.0+9
 
 dev_dependencies:
   flutter_test:

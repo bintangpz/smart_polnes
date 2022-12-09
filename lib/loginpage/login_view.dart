@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
-import 'package:smart_polnes/dashboard.dart';
+import 'package:smart_polnes/mainpage/dashboard.dart';
 //import 'package:dashboard_screen.dart';
 
 const users = const {

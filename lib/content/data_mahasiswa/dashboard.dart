@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/content/data_mahasiswa/daftar_nilai.dart';
-import 'package:smart_polnes/content/data_mahasiswa/presensi_kehadiran.dart';
+import 'package:smart_polnes/content/data_mahasiswa/persentase_kehadiran.dart';
 
 class ChartMahasiswa extends StatelessWidget {
   const ChartMahasiswa({super.key});
