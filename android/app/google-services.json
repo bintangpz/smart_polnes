@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "937411041392",
+    "project_id": "smart-polnes",
+    "storage_bucket": "smart-polnes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937411041392:android:e5e969d1bad5d4e8fcbcb5",
+        "android_client_info": {
+          "package_name": "ones.intaluones.smart_polnes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937411041392-bkq4t2eg92dhkirf2bvrpkj8ugj1n4fv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvX7RWCraa7Mz7_n7-3Kh7ftdtyxVHlnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937411041392-bkq4t2eg92dhkirf2bvrpkj8ugj1n4fv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
