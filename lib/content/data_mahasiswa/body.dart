@@ -3,13 +3,6 @@ import 'package:d_chart/d_chart.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
-  List ranking = [
-    {'class': 'A', 'total': 23},
-    {'class': 'B', 'total': 14},
-    {'class': 'C', 'total': 8},
-    {'class': 'D', 'total': 7},
-    {'class': 'E', 'total': 21},
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

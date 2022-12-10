@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/content/data_mahasiswa/persentase_kehadiran.dart';
+import 'package:smart_polnes/mainpage/dashboard.dart';
 import 'content/Kalender_akademik/kalender_akademik.dart';
 
 class SideMenuContent extends StatelessWidget {
@@ -36,7 +37,8 @@ class SideMenuContent extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Dashboard()));
             },
             leading:
                 const Icon(Icons.dashboard, size: 20.0, color: Colors.white),
@@ -96,8 +98,10 @@ class SideMenuContent extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PersentaseMahasiswa()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PersentaseMahasiswa()));
             },
             leading:
                 const Icon(Icons.credit_score, size: 20.0, color: Colors.white),
