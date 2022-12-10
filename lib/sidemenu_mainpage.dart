@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:smart_polnes/content/data_mahasiswa/persentase_kehadiran.dart';
 
 import 'content/Kalender_akademik/kalender_akademik.dart';
-import 'content/data_mahasiswa/dashboard.dart';
+import 'content/data_mahasiswa/body.dart';
 
 class SideMenuMainPage extends StatelessWidget {
   const SideMenuMainPage({
@@ -87,8 +88,10 @@ class SideMenuMainPage extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ChartMahasiswa()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PersentaseMahasiswa()));
             },
             leading:
                 const Icon(Icons.credit_score, size: 20.0, color: Colors.white),

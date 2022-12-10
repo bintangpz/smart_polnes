@@ -11,17 +11,19 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
-      child: Column(children: <Widget>[
-        HeaderWithSearchBox(size: size),
-        TitleWithMoreBtn(
-          title: "Menu Utama",
-        ),
-        MenuPertama(),
-        MenuKedua(),
-        TitleWithMoreBtn(
-          title: "Info Terbaru",
-        ),
-      ]),
+      child: Column(
+        children: <Widget>[
+          HeaderWithSearchBox(size: size),
+          TitleWithMoreBtn(
+            title: "Menu Utama",
+          ),
+          MenuPertama(),
+          MenuKedua(),
+          TitleWithMoreBtn(
+            title: "Info Terbaru",
+          ),
+        ],
+      ),
     );
   }
 }

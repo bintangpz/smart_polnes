@@ -1,7 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
-import 'package:smart_polnes/content/data_mahasiswa/dashboard.dart';
-import 'package:smart_polnes/content/kalender_akademik/kalender_akademik.dart';
+import 'package:smart_polnes/content/Kalender_akademik/kalender_akademik.dart';
+import 'package:smart_polnes/content/data_mahasiswa/persentase_kehadiran.dart';
 
 class MenuKedua extends StatelessWidget {
   const MenuKedua({
@@ -50,7 +50,7 @@ class MenuKedua extends StatelessWidget {
             Icons: Icons.credit_score,
             press: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ChartMahasiswa()));
+                  MaterialPageRoute(builder: (context) => PersentaseMahasiswa()));
             },
           ),
           SizedBox(
