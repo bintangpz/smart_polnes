@@ -43,6 +43,8 @@ dependencies:
   shrink_sidemenu: ^2.0.0+2-null-safety
   liquid_ui: ^1.0.0+9
   d_chart: ^1.0.0
+  firebase_auth: ^4.2.0
+  marquee_text: ^2.5.0+1
 
 dev_dependencies:
   flutter_test:
