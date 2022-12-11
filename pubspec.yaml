@@ -44,7 +44,7 @@ dependencies:
   liquid_ui: ^1.0.0+9
   d_chart: ^1.0.0
   firebase_auth: ^4.2.0
-  marquee_text: ^2.5.0+1
+  qr_code_scanner: ^1.0.1
 
 dev_dependencies:
   flutter_test:

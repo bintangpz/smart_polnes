@@ -3,7 +3,6 @@ import 'package:smart_polnes/mainpage/header_with_searchbox.dart';
 import 'package:smart_polnes/mainpage/menu_pertama.dart';
 import 'package:smart_polnes/mainpage/menu_kedua.dart';
 import 'package:smart_polnes/mainpage/title.dart';
-import 'package:smart_polnes/mainpage/running_text.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});

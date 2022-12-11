@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/content/data_mahasiswa/persentase_kehadiran.dart';
+import 'package:smart_polnes/content/qr_code/qr_scanner.dart';
 import 'content/Kalender_akademik/kalender_akademik.dart';
 
 class SideMenuMainPage extends StatelessWidget {
@@ -75,7 +76,10 @@ class SideMenuMainPage extends StatelessWidget {
             // padding: EdgeInsets.zero,
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => QRScan()));
+            },
             leading: const Icon(Icons.present_to_all,
                 size: 20.0, color: Colors.white),
             title: const Text("Absensi Online"),

@@ -2,6 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/content/Kalender_akademik/kalender_akademik.dart';
 import 'package:smart_polnes/content/data_mahasiswa/persentase_kehadiran.dart';
+import 'package:smart_polnes/content/qr_code/qr_scanner.dart';
 
 class MenuKedua extends StatelessWidget {
   const MenuKedua({
@@ -26,19 +27,8 @@ class MenuKedua extends StatelessWidget {
               text: "Absensi Online",
               Icons: Icons.present_to_all,
               press: () {
-                final snackBar = SnackBar(
-                  elevation: 0,
-                  behavior: SnackBarBehavior.floating,
-                  backgroundColor: Colors.transparent,
-                  content: AwesomeSnackbarContent(
-                    title: 'ComingSoon!',
-                    message: 'Ditunggu Update Selanjutnya!',
-                    contentType: ContentType.success,
-                  ),
-                );
-                ScaffoldMessenger.of(context)
-                  ..hideCurrentSnackBar()
-                  ..showSnackBar(snackBar);
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => QRScan()));
               },
             ),
           ),
@@ -49,8 +39,10 @@ class MenuKedua extends StatelessWidget {
             text: "Chart Mahasiswa",
             Icons: Icons.credit_score,
             press: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PersentaseMahasiswa()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PersentaseMahasiswa()));
             },
           ),
           SizedBox(
