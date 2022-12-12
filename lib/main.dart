@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -38,16 +39,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   void _onIntroEnd(context) {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => LoginScreen()),
-    );
-  }
-
-  Widget _buildFullscreenImage() {
-    return Image.asset(
-      'assets/fullscreen.jpg',
-      fit: BoxFit.cover,
-      height: double.infinity,
-      width: double.infinity,
-      alignment: Alignment.center,
     );
   }
 
