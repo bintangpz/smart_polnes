@@ -1,4 +1,4 @@
-package com.example.smart_polnes
+package ones.intaluones.smart_polnes
 
 import io.flutter.embedding.android.FlutterActivity
 
