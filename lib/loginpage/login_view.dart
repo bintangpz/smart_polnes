@@ -1,3 +1,5 @@
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:smart_polnes/mainpage/dashboard.dart';
@@ -7,7 +9,9 @@ const users = const {
   'mc.bintang@gmail.com': '12345',
 };
 
+
 class LoginScreen extends StatelessWidget {
+  
   Duration get loginTime => Duration(milliseconds: 1000);
 
   Future<String?> _authUser(LoginData data) {
@@ -22,6 +26,7 @@ class LoginScreen extends StatelessWidget {
       return null;
     });
   }
+
 
   Future<String?> _signupUser(SignupData data) {
     debugPrint('Signup Name: ${data.name}, Password: ${data.password}');

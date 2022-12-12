@@ -1,10 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smart_polnes/loginpage/login_view.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-void main() => runApp(App());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(App());
+}
 
 class App extends StatelessWidget {
   @override
@@ -16,8 +21,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'SMART TI',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.blue),
+      theme: ThemeData(primaryColor: Colors.blue),
       home: OnBoardingPage(),
     );
   }

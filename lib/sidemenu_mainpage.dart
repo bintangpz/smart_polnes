@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/content/data_mahasiswa/persentase_kehadiran.dart';
 import 'package:smart_polnes/content/qr_code/qr_scanner.dart';
@@ -36,7 +37,21 @@ class SideMenuMainPage extends StatelessWidget {
             ),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              final snackBar = SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'ComingSoon!',
+                  message: 'Ditunggu Update Selanjutnya!',
+                  contentType: ContentType.success,
+                ),
+              );
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
+            },
             leading: const Icon(Icons.newspaper_outlined,
                 size: 20.0, color: Colors.white),
             title: const Text("Info Terbaru"),
@@ -46,7 +61,21 @@ class SideMenuMainPage extends StatelessWidget {
             // padding: EdgeInsets.zero,
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              final snackBar = SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'ComingSoon!',
+                  message: 'Ditunggu Update Selanjutnya!',
+                  contentType: ContentType.success,
+                ),
+              );
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
+            },
             leading: const Icon(Icons.people_outline,
                 size: 20.0, color: Colors.white),
             title: const Text("Status Dosen"),
@@ -56,7 +85,21 @@ class SideMenuMainPage extends StatelessWidget {
             // padding: EdgeInsets.zero,
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              final snackBar = SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'ComingSoon!',
+                  message: 'Ditunggu Update Selanjutnya!',
+                  contentType: ContentType.success,
+                ),
+              );
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
+            },
             leading: const Icon(Icons.door_front_door_outlined,
                 size: 20.0, color: Colors.white),
             title: const Text("Status Ruangan"),
@@ -66,7 +109,21 @@ class SideMenuMainPage extends StatelessWidget {
             // padding: EdgeInsets.zero,
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              final snackBar = SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'ComingSoon!',
+                  message: 'Ditunggu Update Selanjutnya!',
+                  contentType: ContentType.success,
+                ),
+              );
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
+            },
             leading: const Icon(Icons.credit_score_outlined,
                 size: 20.0, color: Colors.white),
             title: const Text("KHS"),
@@ -117,7 +174,21 @@ class SideMenuMainPage extends StatelessWidget {
             // padding: EdgeInsets.zero,
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              final snackBar = SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'ComingSoon!',
+                  message: 'Ditunggu Update Selanjutnya!',
+                  contentType: ContentType.success,
+                ),
+              );
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
+            },
             leading: const Icon(Icons.today, size: 20.0, color: Colors.white),
             title: const Text("Jadwal Kuliah"),
             textColor: Colors.white,
@@ -126,7 +197,21 @@ class SideMenuMainPage extends StatelessWidget {
             // padding: EdgeInsets.zero,
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              final snackBar = SnackBar(
+                elevation: 0,
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.transparent,
+                content: AwesomeSnackbarContent(
+                  title: 'ComingSoon!',
+                  message: 'Ditunggu Update Selanjutnya!',
+                  contentType: ContentType.success,
+                ),
+              );
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(snackBar);
+            },
             leading:
                 const Icon(Icons.settings, size: 20.0, color: Colors.white),
             title: const Text("Akun Pengguna"),
