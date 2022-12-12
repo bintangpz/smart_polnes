@@ -44,7 +44,7 @@ dependencies:
   liquid_ui: ^1.0.0+9
   d_chart: ^1.0.0
   firebase_auth: ^4.2.0
-  qr_code_scanner: ^1.0.1
+  simple_barcode_scanner: ^0.0.6
 
 dev_dependencies:
   flutter_test:
