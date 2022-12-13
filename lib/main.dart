@@ -6,13 +6,57 @@ import 'package:flutter/services.dart';
 import 'package:smart_polnes/loginpage/login_view.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+//void main() => runApp(App());
+
+Future<void> main() async {
   runApp(App());
 }
 
 class App extends StatelessWidget {
+  const App({super.key});
+
+  String get name => 'foo';
+
+  Future<void> initializeDefault() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    FirebaseApp app = await Firebase.initializeApp();
+    print('Initialized default app $app');
+  }
+
+  Future<void> initializeDefaultFromAndroidResource() async {
+    if (defaultTargetPlatform != TargetPlatform.android || kIsWeb) {
+      print('Not running on Android, skipping');
+      return;
+    }
+    FirebaseApp app = await Firebase.initializeApp();
+    print('Initialized default app $app from Android resource');
+  }
+
+  Future<void> initializeSecondary() async {
+    FirebaseApp app = await Firebase.initializeApp(
+      name: name,
+    );
+
+    print('Initialized $app');
+  }
+
+  void apps() {
+    final List<FirebaseApp> apps = Firebase.apps;
+    print('Currently initialized apps: $apps');
+  }
+
+  void options() {
+    final FirebaseApp app = Firebase.app();
+    final options = app.options;
+    print('Current options for app ${app.name}: $options');
+  }
+
+  Future<void> delete() async {
+    final FirebaseApp app = Firebase.app(name);
+    await app.delete();
+    print('App $name deleted');
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
