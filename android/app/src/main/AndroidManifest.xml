@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ones.intaluones.smart_polnes">
    <application
-        android:label="smart_polnes"
+        android:label="SMART POLNES"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
