@@ -11,7 +11,7 @@ const users = const {
 class LoginScreen extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 1000);
 
-  FirebaseAuth auth = FirebaseAuth.instance;
+  //FirebaseAuth auth = FirebaseAuth.instance;
 
   Future<String?> _authUser(LoginData data) {
     debugPrint('Name: ${data.name}, Password: ${data.password}');
@@ -27,20 +27,20 @@ class LoginScreen extends StatelessWidget {
   }
 
   Future<String?> DaftarViaEmail(SignupData data) async {
-    try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: data.name.toString(),
-        password: data.password.toString(),
-      );
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
-      }
-    } catch (e) {
-      print(e);
-    }
+    // try {
+    //   await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    //     email: data.name.toString(),
+    //     password: data.password.toString(),
+    //   );
+    // } on FirebaseAuthException catch (e) {
+    //   if (e.code == 'weak-password') {
+    //     print('The password provided is too weak.');
+    //   } else if (e.code == 'email-already-in-use') {
+    //     print('The account already exists for that email.');
+    //   }
+    // } catch (e) {
+    //   print(e);
+    // }
   }
   // Future<String?> _signupUser(SignupData data) {
   //   debugPrint('Signup Name: ${data.name}, Password: ${data.password}');

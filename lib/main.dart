@@ -9,7 +9,7 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  //await Firebase.initializeApp();
 
   runApp(App());
 }
