@@ -40,7 +40,7 @@ class SideMenuContent extends StatelessWidget {
           ListTile(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Dashboard()));
+                  MaterialPageRoute(builder: (context) => Dashboard(key: key)));
             },
             leading:
                 const Icon(Icons.dashboard, size: 20.0, color: Colors.white),

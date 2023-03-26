@@ -27,11 +27,15 @@ class PersentaseMahasiswa extends StatelessWidget {
       leading: IconButton(
         icon: const Icon(Icons.menu),
         onPressed: () {
-          final _state = _sideMenuKey.currentState;
-          if (_state!.isOpened)
-            _state.closeSideMenu(); // close side menu
+          final state = _sideMenuKey.currentState;
+          if (state!.isOpened)
+          {
+            state.closeSideMenu();
+          } // close side menu
           else
-            _state.openSideMenu(); // open side menu
+          {
+            state.openSideMenu(); // open side menu
+          }
         },
       ),
     );

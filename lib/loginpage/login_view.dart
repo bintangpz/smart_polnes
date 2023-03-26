@@ -13,6 +13,7 @@ const users = {
 };
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({required Key? key}) : super(key: key);
   Duration get loginTime => const Duration(milliseconds: 1000);
 
   //FirebaseAuth auth = FirebaseAuth.instance;
@@ -73,7 +74,7 @@ class LoginScreen extends StatelessWidget {
       onSignup: daftarviaemail,
       onSubmitAnimationCompleted: () {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => Dashboard(),
+          builder: (context) => Dashboard(key: key),
         ));
       },
       onRecoverPassword: _recoverPassword,

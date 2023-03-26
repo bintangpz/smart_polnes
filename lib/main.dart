@@ -8,7 +8,7 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 //void main() => runApp(App());
 
-Future <void> main() async {
+Future<void> main() async {
   // WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
   runApp(const App());
@@ -27,22 +27,23 @@ class App extends StatelessWidget {
       title: 'SMART TI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.blue),
-      home: OnBoardingPage(),
+      home: OnBoardingPage(key: key),
     );
   }
 }
 
 class OnBoardingPage extends StatefulWidget {
+  const OnBoardingPage({required Key? key}) : super(key: key);
   @override
-  _OnBoardingPageState createState() => _OnBoardingPageState();
+  OnBoardingPageState createState() => OnBoardingPageState();
 }
 
-class _OnBoardingPageState extends State<OnBoardingPage> {
+class OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => LoginScreen()),
+      MaterialPageRoute(builder: (_) => LoginScreen(key: introKey)),
     );
   }
 
@@ -54,7 +55,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   Widget build(BuildContext context) {
     const bodyStyle = TextStyle(fontSize: 19.0);
 
-    const pageDecoration =  PageDecoration(
+    const pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
       bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
