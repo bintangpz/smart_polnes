@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>431945182352-1t0amue7e4o9sv0lmjgtpavja7gtt3pk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.431945182352-1t0amue7e4o9sv0lmjgtpavja7gtt3pk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCHQ6oTM7zHeiAUZ8lVaGJjx76koYDACmQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>431945182352</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.smartPolnes</string>
+	<key>PROJECT_ID</key>
+	<string>smart-ti-polnes-bbe34</string>
+	<key>STORAGE_BUCKET</key>
+	<string>smart-ti-polnes-bbe34.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:431945182352:ios:8ffeb3a43f811d1010bc15</string>
+	<key>DATABASE_URL</key>
+	<string>https://smart-ti-polnes-bbe34-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>

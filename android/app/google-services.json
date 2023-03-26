@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "937411041392",
-    "project_id": "smart-polnes",
-    "storage_bucket": "smart-polnes.appspot.com"
+    "project_number": "431945182352",
+    "firebase_url": "https://smart-ti-polnes-bbe34-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smart-ti-polnes-bbe34",
+    "storage_bucket": "smart-ti-polnes-bbe34.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:937411041392:android:e5e969d1bad5d4e8fcbcb5",
+        "mobilesdk_app_id": "1:431945182352:android:55b70c12d4cb7f8710bc15",
         "android_client_info": {
           "package_name": "ones.intaluones.smart_polnes"
         }
       },
       "oauth_client": [
         {
-          "client_id": "937411041392-bkq4t2eg92dhkirf2bvrpkj8ugj1n4fv.apps.googleusercontent.com",
+          "client_id": "431945182352-hbjofuh3cdksp618cjogna4jbt3gvn0q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAvX7RWCraa7Mz7_n7-3Kh7ftdtyxVHlnk"
+          "current_key": "AIzaSyAs8b7L3fov55tVw3j9O8PaQ9r5_YG4vKY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "937411041392-bkq4t2eg92dhkirf2bvrpkj8ugj1n4fv.apps.googleusercontent.com",
+              "client_id": "431945182352-hbjofuh3cdksp618cjogna4jbt3gvn0q.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
