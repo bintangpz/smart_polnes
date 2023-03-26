@@ -12,7 +12,7 @@ class PersentaseMahasiswa extends StatelessWidget {
   Widget build(BuildContext context) {
     return SideMenu(
       key: _sideMenuKey,
-      menu: SideMenuContent(),
+      menu: const SideMenuContent(),
       type: SideMenuType.slideNRotate,
       child: Scaffold(
         appBar: buildAppBar(),
@@ -25,7 +25,7 @@ class PersentaseMahasiswa extends StatelessWidget {
     return AppBar(
       elevation: 0,
       leading: IconButton(
-        icon: Icon(Icons.menu),
+        icon: const Icon(Icons.menu),
         onPressed: () {
           final _state = _sideMenuKey.currentState;
           if (_state!.isOpened)

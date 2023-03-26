@@ -14,12 +14,12 @@ class Body extends StatelessWidget {
       child: Column(
         children: <Widget>[
           HeaderWithSearchBox(size: size),
-          TitleWithMoreBtn(
+          const TitleWithMoreBtn(
             title: "Menu Utama",
           ),
-          MenuPertama(),
-          MenuKedua(),
-          TitleWithMoreBtn(
+          const MenuPertama(),
+          const MenuKedua(),
+          const TitleWithMoreBtn(
             title: "Info Terbaru",
           ),
         ],

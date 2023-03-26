@@ -13,9 +13,9 @@ class Body extends StatelessWidget {
           height: size.height * 0.8,
           child: Row(
             children: <Widget>[
-              Expanded(
+              const Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
+                  padding: EdgeInsets.symmetric(
                     vertical: kDefaultPadding * 3,
                   ),
                 ),
@@ -24,18 +24,18 @@ class Body extends StatelessWidget {
                 height: size.height * 0.8,
                 width: size.width * 0.75,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(63),
                     bottomLeft: Radius.circular(63),
                   ),
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0, 10),
+                      offset: const Offset(0, 10),
                       blurRadius: 60,
                       color: Colors.blue.withOpacity(.29),
                     ),
                   ],
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     alignment: Alignment.centerLeft,
                     fit: BoxFit.fill,
                     image: AssetImage("images/kalender_polnes.jpg"),

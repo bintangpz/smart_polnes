@@ -10,15 +10,15 @@ class Body extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-              title: Text('Rekap Nilai'),
+              title: const Text('Rekap Nilai'),
               tileColor: Colors.green[200],
             ),
             Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: AspectRatio(
                 aspectRatio: 16 / 9,
                 child: DChartBar(
-                  data: [
+                  data: const [
                     {
                       'id': 'Bar 1',
                       'data': [
@@ -54,9 +54,9 @@ class Body extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Row(
-                children: [
+                children: const [
                   RotatedBox(
                     quarterTurns: 1,
                     child: Text(
@@ -71,15 +71,15 @@ class Body extends StatelessWidget {
               ),
             ),
             ListTile(
-              title: Text('Rekap Kehadiran'),
+              title: const Text('Rekap Kehadiran'),
               tileColor: Colors.purple[200],
             ),
             Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: AspectRatio(
                 aspectRatio: 16 / 9,
                 child: DChartPie(
-                  data: [
+                  data: const [
                     {'domain': 'Hadir', 'measure': 50},
                     {'domain': 'Tidak Hadir', 'measure': 20},
                     {'domain': 'Izin', 'measure': 5},

@@ -149,7 +149,7 @@ class SideMenuContent extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => QRScan()));
+                      builder: (context) => const QRScan()));
             },
             leading: const Icon(Icons.present_to_all,
                 size: 20.0, color: Colors.white),
@@ -164,7 +164,7 @@ class SideMenuContent extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => PersentaseMahasiswa()));
+                      builder: (context) => const PersentaseMahasiswa()));
             },
             leading:
                 const Icon(Icons.credit_score, size: 20.0, color: Colors.white),
@@ -177,7 +177,7 @@ class SideMenuContent extends StatelessWidget {
           ListTile(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => KalenderAkademik()));
+                  MaterialPageRoute(builder: (context) => const KalenderAkademik()));
             },
             leading: const Icon(Icons.calendar_month,
                 size: 20.0, color: Colors.white),

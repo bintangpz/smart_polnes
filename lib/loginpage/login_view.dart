@@ -8,12 +8,12 @@ import 'package:smart_polnes/mainpage/dashboard.dart';
 
 
 
-const users = const {
+const users = {
   'mc.bintang@gmail.com': '12345',
 };
 
 class LoginScreen extends StatelessWidget {
-  Duration get loginTime => Duration(milliseconds: 1000);
+  Duration get loginTime => const Duration(milliseconds: 1000);
 
   //FirebaseAuth auth = FirebaseAuth.instance;
   //await Firebase.initializeApp();
@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
     });
   }
 
-  Future<String?> DaftarViaEmail(SignupData data) async {
+  Future<String?> daftarviaemail(SignupData data) async {
   //   try {
   //     await FirebaseAuth.instance.createUserWithEmailAndPassword(
   //       email: data.name.toString(),
@@ -68,9 +68,9 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlutterLogin(
       title: 'SMART TI',
-      logo: AssetImage('images/logo_ti.png'),
+      logo: const AssetImage('images/logo_ti.png'),
       onLogin: _authUser,
-      onSignup: DaftarViaEmail,
+      onSignup: daftarviaemail,
       onSubmitAnimationCompleted: () {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (context) => Dashboard(),

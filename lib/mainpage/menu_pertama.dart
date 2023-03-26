@@ -12,7 +12,7 @@ class MenuPertama extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Padding(
@@ -22,7 +22,7 @@ class MenuPertama extends StatelessWidget {
             ),
             child: DaftarMenu(
               text: "Info Terbaru",
-              Icons: Icons.newspaper_outlined,
+              icons: Icons.newspaper_outlined,
               press: () {
               final snackBar = SnackBar(
                 elevation: 0,
@@ -40,12 +40,12 @@ class MenuPertama extends StatelessWidget {
             },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           DaftarMenu(
             text: "Status Dosen",
-            Icons: Icons.people_outline,
+            icons: Icons.people_outline,
             press: () {
               final snackBar = SnackBar(
                 elevation: 0,
@@ -62,12 +62,12 @@ class MenuPertama extends StatelessWidget {
                 ..showSnackBar(snackBar);
             },
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           DaftarMenu(
             text: "Status Ruangan",
-            Icons: Icons.door_front_door_outlined,
+            icons: Icons.door_front_door_outlined,
             press: () {
               final snackBar = SnackBar(
                 elevation: 0,
@@ -84,12 +84,12 @@ class MenuPertama extends StatelessWidget {
                 ..showSnackBar(snackBar);
             },
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           DaftarMenu(
             text: "KHS",
-            Icons: Icons.credit_score_outlined,
+            icons: Icons.credit_score_outlined,
             press: () {
               final snackBar = SnackBar(
                 elevation: 0,
@@ -116,20 +116,20 @@ class DaftarMenu extends StatelessWidget {
   const DaftarMenu({
     Key? key,
     required this.text,
-    required this.Icons,
+    required this.icons,
     required this.press,
   }) : super(key: key);
 
   final String text;
-  final IconData Icons;
+  final IconData icons;
   final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    //Size size = MediaQuery.of(context).size;
     return SizedBox.fromSize(
-      size: Size(130, 130),
-      child: new ClipRRect(
+      size: const Size(130, 130),
+      child: ClipRRect(
         borderRadius: BorderRadius.circular(30),
         child: Material(
           color: Colors.white,
@@ -140,12 +140,12 @@ class DaftarMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(
-                  Icons,
+                  icons,
                   size: 30,
                 ),
                 Text(
                   text,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
