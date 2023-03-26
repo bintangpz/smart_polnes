@@ -57,6 +57,8 @@ dependencies:
   firebase_dynamic_links: ^5.0.8
   firebase_database: ^10.0.7
   firebase_core_platform_interface: ^4.5.2
+  firebase: ^9.0.3
+  http: ^0.13.0
 
 dev_dependencies:
   flutter_test:

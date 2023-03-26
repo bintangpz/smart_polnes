@@ -6,17 +6,14 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
-
-//void main() => runApp(App());
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const SmartTI());
+  runApp(const App());
 }
 
-class SmartTI extends StatelessWidget {
-  const SmartTI({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
