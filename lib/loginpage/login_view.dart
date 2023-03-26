@@ -1,8 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:smart_polnes/mainpage/dashboard.dart';
 //import 'package:dashboard_screen.dart';
+
+
 
 const users = const {
   'mc.bintang@gmail.com': '12345',
@@ -12,6 +15,7 @@ class LoginScreen extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 1000);
 
   //FirebaseAuth auth = FirebaseAuth.instance;
+  //await Firebase.initializeApp();
 
   Future<String?> _authUser(LoginData data) {
     debugPrint('Name: ${data.name}, Password: ${data.password}');
@@ -27,20 +31,20 @@ class LoginScreen extends StatelessWidget {
   }
 
   Future<String?> DaftarViaEmail(SignupData data) async {
-    // try {
-    //   await FirebaseAuth.instance.createUserWithEmailAndPassword(
-    //     email: data.name.toString(),
-    //     password: data.password.toString(),
-    //   );
-    // } on FirebaseAuthException catch (e) {
-    //   if (e.code == 'weak-password') {
-    //     print('The password provided is too weak.');
-    //   } else if (e.code == 'email-already-in-use') {
-    //     print('The account already exists for that email.');
-    //   }
-    // } catch (e) {
-    //   print(e);
-    // }
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: data.name.toString(),
+        password: data.password.toString(),
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
+      }
+    } catch (e) {
+      print(e);
+    }
   }
   // Future<String?> _signupUser(SignupData data) {
   //   debugPrint('Signup Name: ${data.name}, Password: ${data.password}');
