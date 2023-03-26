@@ -42,7 +42,7 @@ class MenuKedua extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const PersentaseMahasiswa()));
+                      builder: (context) => PersentaseMahasiswa(key: key)));
             },
           ),
           const SizedBox(

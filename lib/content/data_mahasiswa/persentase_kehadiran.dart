@@ -6,7 +6,7 @@ import 'package:smart_polnes/sidemenu_content.dart';
 final GlobalKey<SideMenuState> _sideMenuKey = GlobalKey<SideMenuState>();
 
 class PersentaseMahasiswa extends StatelessWidget {
-  const PersentaseMahasiswa({super.key});
+  const PersentaseMahasiswa({required Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class PersentaseMahasiswa extends StatelessWidget {
       type: SideMenuType.slideNRotate,
       child: Scaffold(
         appBar: buildAppBar(),
-        body: Body(key: _sideMenuKey),
+        body: Body(key: key),
       ),
     );
   }

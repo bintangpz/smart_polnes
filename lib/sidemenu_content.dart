@@ -164,7 +164,7 @@ class SideMenuContent extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const PersentaseMahasiswa()));
+                      builder: (context) => PersentaseMahasiswa(key: key)));
             },
             leading:
                 const Icon(Icons.credit_score, size: 20.0, color: Colors.white),
