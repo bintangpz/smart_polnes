@@ -4,16 +4,14 @@ import 'package:flutter/services.dart';
 import 'package:smart_polnes/loginpage/login_view.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_core/firebase_core.dart';
 
 //void main() => runApp(App());
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-
-  runApp(App());
+Future <void> main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
