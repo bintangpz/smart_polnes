@@ -16,7 +16,7 @@ class PersentaseMahasiswa extends StatelessWidget {
       type: SideMenuType.slideNRotate,
       child: Scaffold(
         appBar: buildAppBar(),
-        body: Body(),
+        body: Body(key: _sideMenuKey),
       ),
     );
   }
@@ -28,12 +28,10 @@ class PersentaseMahasiswa extends StatelessWidget {
         icon: const Icon(Icons.menu),
         onPressed: () {
           final state = _sideMenuKey.currentState;
-          if (state!.isOpened)
-          {
+          if (state!.isOpened) {
             state.closeSideMenu();
           } // close side menu
-          else
-          {
+          else {
             state.openSideMenu(); // open side menu
           }
         },
