@@ -2,7 +2,8 @@ import 'package:d_chart/d_chart.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
-  const Body({required Key? key}) : super(key: key);
+  const Body({required Key? key});
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
