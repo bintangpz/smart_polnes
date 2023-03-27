@@ -7,54 +7,79 @@ import 'package:smart_polnes/mainpage/dashboard.dart';
 // const users = {
 //   'mc.bintang@gmail.com': '12345',
 // };
+User? user;
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({required Key? key}) : super(key: key);
   Duration get loginTime => const Duration(milliseconds: 1000);
 
   Future<String?> authUser(LoginData data) async {
-    final FirebaseAuth auth = FirebaseAuth.instance;
     try {
-      UserCredential userCredential = await auth.signInWithEmailAndPassword(
-        email: data.name.toString(),
-        password: data.password.toString(),
+      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: data.name.toString(),
+          password: data.password.toString(),
       );
-      User? user = userCredential.user; // login berhasil
+      user = userCredential.user;
+      if (user?.emailVerified ?? false) {
+      // user telah melakukan verifikasi email, lanjutkan ke halaman berikutnya
+      return null;
+    } else {
+      // user belum melakukan verifikasi email, tampilkan pesan kesalahan
+      return 'Email belum diverifikasi';
+    }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        // email tidak ditemukan
+        debugPrint('User tidak ditemukan');
+        return 'User tidak ditemukan';
       } else if (e.code == 'wrong-password') {
-        // password salah
+        debugPrint('Password yang dimasukkan salah');
+        return 'Password yang dimasukkan salah';
+      } else {
+        //print(e);
+        return e.toString();
       }
     }
   }
 
-  Future<String?> daftarviaemail(SignupData data) async {
+   Future<String?> daftarviaemail(SignupData data) async {
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: data.name.toString(),
         password: data.password.toString(),
       );
+    User user = userCredential.user!;
+    await user.sendEmailVerification();
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => LoginScreen(key: key)),
+    );
+    return null;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
+        debugPrint('The password provided is too weak.');
+        return 'Password terlalu lemah';
       } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
+        debugPrint('The account already exists for that email.');
+        return 'Email sudah terdaftar';
+      } else {
+        //print(e);
+        return e.toString();
       }
     } catch (e) {
-      print(e);
+      //print(e);
+      return e.toString();
     }
   }
 
-  Future<String> _recoverPassword(String name) {
-    debugPrint('Name: $name');
-    return Future.delayed(loginTime).then((_) {
-      // if (!users.containsKey(name)) {
-      //   return 'User not exists';
-      // }
-      return 'null';
-    });
+  Future<String?> _resetPassword(String name) async {
+  try {
+    await FirebaseAuth.instance.sendPasswordResetEmail(email: name);
+    return null;
+  } catch (e) {
+    debugPrint('Error kirim Reset Password ke: $e');
+    return 'Email Tidak Terdaftar';
   }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +93,7 @@ class LoginScreen extends StatelessWidget {
           builder: (context) => Dashboard(key: key),
         ));
       },
-      onRecoverPassword: _recoverPassword,
+      onRecoverPassword: _resetPassword,
     );
   }
 }
