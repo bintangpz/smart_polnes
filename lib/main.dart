@@ -5,12 +5,15 @@ import 'package:smart_polnes/loginpage/login_view.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-Future<void> main() async {
+
+Future <void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
   runApp(const App());
 }
+
 
 class App extends StatelessWidget {
   const App({super.key});

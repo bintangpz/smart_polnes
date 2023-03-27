@@ -30,6 +30,13 @@
             {
               "client_id": "431945182352-hbjofuh3cdksp618cjogna4jbt3gvn0q.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "431945182352-1t0amue7e4o9sv0lmjgtpavja7gtt3pk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.smartPolnes"
+              }
             }
           ]
         }
