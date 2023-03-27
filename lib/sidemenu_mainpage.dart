@@ -1,7 +1,11 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_polnes/content/data_mahasiswa/persentase_kehadiran.dart';
 import 'package:smart_polnes/content/qr_code/qr_scanner.dart';
+import 'package:smart_polnes/loginpage/login_view.dart';
 import 'content/Kalender_akademik/kalender_akademik.dart';
 
 class SideMenuMainPage extends StatelessWidget {
@@ -134,8 +138,8 @@ class SideMenuMainPage extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => const QRScan()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const QRScan()));
             },
             leading: const Icon(Icons.present_to_all,
                 size: 20.0, color: Colors.white),
@@ -162,8 +166,10 @@ class SideMenuMainPage extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const KalenderAkademik()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const KalenderAkademik()));
             },
             leading: const Icon(Icons.calendar_month,
                 size: 20.0, color: Colors.white),
@@ -215,6 +221,22 @@ class SideMenuMainPage extends StatelessWidget {
             leading:
                 const Icon(Icons.settings, size: 20.0, color: Colors.white),
             title: const Text("Akun Pengguna"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+          ListTile(
+            onTap: () async {
+              await FirebaseAuth.instance.signOut();
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => LoginScreen(key: key)));
+            },
+            leading: const Icon(Icons.logout_outlined,
+                size: 20.0, color: Colors.white),
+            title: const Text("Keluar"),
             textColor: Colors.white,
             dense: true,
 
