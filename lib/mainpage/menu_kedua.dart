@@ -112,7 +112,7 @@ class DaftarMenu extends StatelessWidget {
               children: <Widget>[
                Icon(
                   icons,
-                  size: 10,
+                  size: 20,
                 ),
                 Text(
                   text,
