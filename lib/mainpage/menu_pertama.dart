@@ -147,7 +147,7 @@ class DaftarMenu extends StatelessWidget {
                   text,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 10,
+                    fontSize: 20,
                   ),
                 ),
               ],
