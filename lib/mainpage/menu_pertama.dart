@@ -128,7 +128,7 @@ class DaftarMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     //Size size = MediaQuery.of(context).size;
     return SizedBox.fromSize(
-      size: const Size(130, 130),
+      size: const Size(100, 100),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(30),
         child: Material(
@@ -141,12 +141,13 @@ class DaftarMenu extends StatelessWidget {
               children: <Widget>[
                 Icon(
                   icons,
-                  size: 30,
+                  size: 20,
                 ),
                 Text(
                   text,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
+                    fontSize: 10,
                   ),
                 ),
               ],
